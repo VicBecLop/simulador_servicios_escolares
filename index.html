@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Atención en Servicios Escolares</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Encabezado Institucional / Barra de Progreso global -->
+        <header class="app-header">
+            <div class="header-brand">
+                <img src="images/escudo_unam.png" alt="Escudo UNAM" class="logo" id="main-logo" onerror="this.style.display='none'">
+                <div class="header-titles">
+                    <h1>Servicios Escolares</h1>
+                    <span class="subtitle">Simulador de Capacitación Interactiva</span>
+                </div>
+            </div>
+            <div class="header-stats hidden" id="header-stats">
+                <div class="stat-item">
+                    <span class="stat-label">PUNTOS</span>
+                    <span class="stat-value" id="score-display">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">PROGRESO</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- PANTALLA 1: Bienvenida -->
+        <section id="screen-welcome" class="screen active">
+            <div class="card text-center hero-card">
+                <div class="hero-icon">🏛️</div>
+                <h2>Bienvenido al Simulador de Atención en Servicios Escolares</h2>
+                <p class="description">
+                    Analiza casos reales, toma decisiones fundamentadas y aplica la normativa institucional en un entorno laboral simulado.
+                </p>
+                <button class="btn btn-primary btn-large" id="btn-start">COMENZAR</button>
+            </div>
+        </section>
+
+        <!-- PANTALLA 2: Introducción Contextual -->
+        <section id="screen-intro" class="screen">
+            <div class="card">
+                <h2>Contexto Operativo</h2>
+                <div class="intro-content">
+                    <p>Durante una jornada laboral estándar en las ventanillas de Servicios Escolares, acudirán alumnos con diversas problemáticas asociadas a:</p>
+                    <ul class="styled-list">
+                        <li>Inscripciones y reinscripciones extemporáneas.</li>
+                        <li>Bajas temporales y definitivas.</li>
+                        <li>Acreditación de prerrequisitos y equivalencias.</li>
+                        <li>Interpretación del Reglamento General de Inscripciones.</li>
+                    </ul>
+                    <p>Tu objetivo es ofrecer una atención ágil, apegada estrictamente al marco normativo y con alto sentido de servicio.</p>
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-primary" id="btn-begin-case">INICIAR CASO</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PANTALLA 3: Presentación del Estudiante -->
+        <section id="screen-student" class="screen">
+            <div class="card grid-2-cols">
+                <div class="student-profile-side text-center">
+                    <img id="student-img" src="" alt="Fotografía del Estudiante" class="avatar-large">
+                    <h3 id="student-name">Cargando...</h3>
+                    <span class="badge" id="student-badge">Trámite de Inscripción</span>
+                    
+                    <div class="audio-player-box">
+                        <p class="audio-label">Escuchar planteamiento del alumno:</p>
+                        <audio id="student-audio" controls>
+                            Su navegador no soporta reproducción de audio.
+                        </audio>
+                    </div>
+                </div>
+                <div class="student-info-side">
+                    <h3>Situación Inicial</h3>
+                    <p id="student-situation" class="situation-text"></p>
+                    <div class="actions-wrapper text-right">
+                        <button class="btn btn-primary" id="btn-view-file">VER EXPEDIENTE</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PANTALLA 4: Expediente del Estudiante -->
+        <section id="screen-file" class="screen">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Expediente Académico Digital</h2>
+                    <span class="file-id" id="file-id">FOLIO: SE-2026-000</span>
+                </div>
+                <div class="file-grid">
+                    <div class="file-field">
+                        <label>Estudiante:</label>
+                        <span id="file-name">---</span>
+                    </div>
+                    <div class="file-field">
+                        <label>Estatus Académico:</label>
+                        <span id="file-status">---</span>
+                    </div>
+                    <div class="file-field full-width">
+                        <label>Problema Reportado:</label>
+                        <p id="file-problem" class="highlight-box">---</p>
+                    </div>
+                    <div class="file-field full-width">
+                        <label>Solicitud Concreta:</label>
+                        <p id="file-request">---</p>
+                    </div>
+                </div>
+                <div class="text-right margin-top-lg">
+                    <button class="btn btn-success" id="btn-solve-case">RESOLVER CASO</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PANTALLA 5: Reto Educativo (Preguntas) -->
+        <section id="screen-challenge" class="screen">
+            <div class="card">
+                <div class="challenge-header">
+                    <span class="badge-challenge" id="challenge-number">Reto #1</span>
+                    <h2 id="challenge-question">Cargando pregunta...</h2>
+                </div>
+                <div class="options-grid" id="options-container">
+                    <!-- Opciones inyectadas dinámicamente -->
+                </div>
+                
+                <!-- Feedback Modal / Container -->
+                <div id="feedback-box" class="feedback-box hidden">
+                    <div id="feedback-title" class="feedback-title"></div>
+                    <p id="feedback-text"></p>
+                    <button class="btn btn-primary margin-top-md" id="btn-to-legal">CONSULTAR FUNDAMENTO LEGAL</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PANTALLA 6: Fundamento Legal -->
+        <section id="screen-legal" class="screen">
+            <div class="card legal-card">
+                <div class="legal-header">
+                    <span class="legal-icon">⚖️</span>
+                    <div>
+                        <h2 id="legal-regulation">Reglamento General</h2>
+                        <h3 id="legal-article" class="text-gold">Artículo X</h3>
+                    </div>
+                </div>
+                <div class="legal-body">
+                    <h4>Texto Normativo:</h4>
+                    <blockquote id="legal-content">...</blockquote>
+                    <h4>Aplicación en Ventanilla:</h4>
+                    <p id="legal-note" class="note-box">...</p>
+                </div>
+                <div class="text-right margin-top-lg">
+                    <button class="btn btn-primary" id="btn-next-step">CONTINUAR</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PANTALLA 7: Continuación / Resultados Parciales y Finales -->
+        <section id="screen-summary" class="screen">
+            <div class="card text-center">
+                <h2>Resumen de Rendimiento</h2>
+                <div class="score-circle">
+                    <span id="final-score">0</span>
+                    <small>PUNTOS</small>
+                </div>
+                <p id="summary-message" class="margin-top-md"></p>
+                <div class="actions-wrapper text-center margin-top-lg">
+                    <button class="btn btn-primary" id="btn-next-challenge">SIGUIENTE RETO</button>
+                    <button class="btn btn-secondary hidden" id="btn-restart">REINICIAR SIMULADOR</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<footer class="app-footer text-center">
+    <p><small>Simulador Educativo Institucional | Desarrollado con el apoyo de IA (Gemini, Google) para código y generación multimedia.</small></p>
+</footer>
+</html>

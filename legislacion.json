@@ -1,0 +1,16 @@
+[
+  {
+    "id_legislacion": 201,
+    "reglamento": "Reglamento General de Inscripciones - UNAM",
+    "articulo": "Artículo 12",
+    "contenido": "Los alumnos tendrán derecho a inscribirse en cada periodo lectivo conforme a los calendarios aprobados. En casos excepcionales, la administración escolar podrá revisar bloqueos técnicos siempre que se compruebe el cumplimiento de prerrequisitos académicos en el historial oficial.",
+    "nota_acralatoria": "En ventanilla debe validarse el historial académico (Kárdex) antes de escalar una solicitud de apertura de sistema."
+  },
+  {
+    "id_legislacion": 202,
+    "reglamento": "Reglamento General de Inscripciones - UNAM",
+    "articulo": "Artículo 25",
+    "contenido": "El alumno podrá solicitar la baja de una o más asignaturas dentro de los plazos fijados en el calendario escolar. Excepcionalmente, el Consejo Técnico o la autoridad competente podrá autorizar la baja fuera de plazo por causas de fuerza mayor o trabajo debidamente probadas.",
+    "nota_acralatoria": "El alumno debe adjuntar carta membretada de la empresa y comprobante de alta ante el sistema de seguridad social correspondiente."
+  }
+]

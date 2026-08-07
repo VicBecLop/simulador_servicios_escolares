@@ -1,0 +1,30 @@
+[
+  {
+    "id_reto": 101,
+    "id_caso": 1,
+    "pregunta": "¿Cuál debe ser la primera acción del personal de ventanilla al recibir a Sandra?",
+    "opciones": [
+      "Autorizar inmediatamente la inscripción manual para no afectar a la alumna.",
+      "Verificar en el sistema el motivo técnico o administrativo del bloqueo antes de dictaminar.",
+      "Rechazar la solicitud indicando que el periodo oficial ya concluyó.",
+      "Remitirla directamente a la Dirección de la Facultad."
+    ],
+    "respuesta_correcta": 1,
+    "retroalimentacion": "Correcto. El personal debe revisar detalladamente el expediente y la normativa vigente antes de emitir o negar cualquier trámite.",
+    "id_legislacion": 201
+  },
+  {
+    "id_reto": 201,
+    "id_caso": 2,
+    "pregunta": "¿Es procedente autorizar la baja de asignaturas a Esteban fuera de los plazos estipulados?",
+    "opciones": [
+      "Sí, siempre que presente un justificante laboral acreditado conforme al reglamento.",
+      "No, bajo ninguna circunstancia se aceptan solicitudes fuera de tiempo.",
+      "Sí, pero únicamente si paga una cuota de extemporaneidad.",
+      "Depende del criterio personal del jefe de ventanilla."
+    ],
+    "respuesta_correcta": 0,
+    "retroalimentacion": "Correcto. La normativa prevé excepciones por causas justificadas (como laborales o de salud) debidamente acreditadas.",
+    "id_legislacion": 202
+  }
+]
