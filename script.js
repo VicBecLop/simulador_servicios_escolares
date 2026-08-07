@@ -96,9 +96,9 @@ const SimuladorApp = {
     async cargarDatos() {
         try {
             const [respCasos, respRetos, respLegis] = await Promise.all([
-                fetch('data/casos.json'),
-                fetch('data/retos.json'),
-                fetch('data/legislacion.json')
+                fetch('casos.json'),
+                fetch('retos.json'),
+                fetch('legislacion.json')
             ]);
 
             this.state.casos = await respCasos.json();
