@@ -2,8 +2,8 @@
   {
     "id": 1,
     "nombre": "Sandra López",
-    "imagen": "images/estudiante_sandra.png",
-    "audio": "audio/sandra.mp3",
+    "imagen": "estudiante_sandra.png",
+    "audio": "sandra.mp3",
     "descripcion": "Solicita apoyo urgente porque el sistema no le permitió completar la reinscripción al semestre actual.",
     "estatus_academico": "Alumno Irregular (1 adeudo)",
     "problema": "Bloqueo en la plataforma Web de inscripciones por presunto incumplimiento de prerrequisitos.",
@@ -12,8 +12,8 @@
   {
     "id": 2,
     "nombre": "Esteban Morales",
-    "imagen": "images/estudiante_esteban.png",
-    "audio": "audio/esteban.mp3",
+    "imagen": "estudiante_esteban.png",
+    "audio": "esteban.mp3",
     "descripcion": "Pide autorizar la baja temporal de dos asignaturas tras el periodo ordinario de ajustes.",
     "estatus_academico": "Alumno Regular",
     "problema": "Incompatibilidad de horario por inicio de relación laboral.",
